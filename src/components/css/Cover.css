@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #171717;
+	color: #fff;
+	padding: 100px 0px 0 100px;
+}
+
+.cover {
+	font-family: monospace;
+}
+.cover .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cover button {
+	background: #ffbb37;
+	font-size: xx-large;
+	padding: 8px 16px;
+	border-radius: 15px;
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: black;
+	display: inline-block;
+	border: 2px solid black;
+	margin-bottom: 20px;
+	box-shadow: 10px 10px 0px #555555;
+	transition: all 0.5s ease-in-out;
+	padding: 20px;
+	max-width: 20%;
+	min-width: 0%;
+}
+
+.cover button:hover {
+	transform: scale(1.1); /* slight zoom */
+	/* background: #ffcc4d; */
+	box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cover button:focus {
+	outline: none;
+}
+
+.cover .heading h1 {
+	font-family: "Sora";
+	font-weight: 700;
+	font-size: 150px;
+	line-height: 200px;
+	text-transform: uppercase;
+}
+
+.cover .content h2 {
+	font-size: xx-large;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	opacity: 0.7;
+}
+.cover .content p {
+	font-size: xx-large;
+}
