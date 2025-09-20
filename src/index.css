@@ -6,6 +6,7 @@
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
 	/* background-color: #242424; */
+	background: #ffffff;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -28,7 +29,6 @@ body {
 	/* place-items: center; */
 	min-width: 320px;
 	min-height: 100vh;
-	background-color: #171717;
 }
 
 h1 {
@@ -36,7 +36,8 @@ h1 {
 	line-height: 1.1;
 }
 
-/* button {
+/* Enhanced responsive button styles */
+button {
 	border-radius: 8px;
 	border: 1px solid transparent;
 	padding: 0.6em 1.2em;
@@ -45,14 +46,83 @@ h1 {
 	font-family: inherit;
 	background-color: #1a1a1a;
 	cursor: pointer;
-	transition: border-color 0.25s;
-} */
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	user-select: none;
+	position: relative;
+	overflow: hidden;
+}
+
 button:hover {
 	border-color: #646cff;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+button:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 button:focus,
 button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
+	outline: 2px solid #646cff;
+	outline-offset: 2px;
+}
+
+/* Responsive button adjustments */
+@media (max-width: 575.98px) {
+	button {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.875rem;
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	button {
+		padding: 0.5rem 1rem;
+		font-size: 0.9rem;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	button {
+		padding: 0.5rem 1.25rem;
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	button {
+		padding: 0.5rem 1.5rem;
+		font-size: 1rem;
+	}
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+	button {
+		min-height: 44px;
+		padding: 0.75rem 1.5rem;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	button {
+		transition: none;
+	}
+
+	button:hover {
+		transform: none;
+	}
 }
 
 @media (prefers-color-scheme: light) {
