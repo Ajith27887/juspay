@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ViewSidebarOutlinedIcon from "@mui/icons-material/ViewSidebarOutlined";
 import "./css/DashboardSideBar.css";
@@ -6,15 +6,16 @@ import profile from "./images/Profile.png";
 import { Link } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
 import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
+import { SidemenuContext } from "./SidemenuProvider";
 
 function DashboardSideBar({ onSidebarToggle }) {
-	const [show, setShow] = useState(false);
 	const [activeItem, setActiveItem] = useState("Favorites"); // Track which item is active
 	const [dropdownOpen, setDropdownOpen] = useState(false); // Track dropdown state
 	const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false); // Track projects dropdown state
 	const [analyticsDropdownOpen, setAnalyticsDropdownOpen] = useState(false); // Track analytics dropdown state
 	const favandrecently = ["Favorites", "Recently"];
-	const menuItems = ["Overview", "Projects"];
+	const menuItems = ["Overview", "Projects"],
+		{ show, setShow, theme } = useContext(SidemenuContext);
 
 	const handleToggle = () => {
 		if (show) {
@@ -51,12 +52,13 @@ function DashboardSideBar({ onSidebarToggle }) {
 	};
 
 	return (
-		<div>
+		<div className={` ${theme === "dark" ? "Dark" : ""}`}>
 			<ViewSidebarOutlinedIcon onClick={handleToggle} className="sidebarIcon" />
 			<Offcanvas
 				show={show}
 				onHide={handleClose}
 				backdrop={false}
+				className={`${theme === "dark" ? "Dark" : ""}`}
 				style={{ zIndex: 0, width: "var(--sidebar-width)" }}
 			>
 				<div className="side_header">
@@ -64,7 +66,7 @@ function DashboardSideBar({ onSidebarToggle }) {
 					<p>ByeWind</p>
 				</div>
 
-				<div className="hamburger_header fav d-flex gap-2 text-center mt-3">
+				<div className={`hamburger_header ${theme === "dark" ? "Dark" : ""} fav d-flex gap-2 text-center mt-3`}>
 					{favandrecently.map((data, i) => (
 						<p
 							key={i}
@@ -75,7 +77,7 @@ function DashboardSideBar({ onSidebarToggle }) {
 						</p>
 					))}
 				</div>
-				<div className="menuitems">
+				<div className={`menuitems ${theme === "dark" ? "Dark" : ""}`}>
 					<ul className="ml-5 cursor">
 						{menuItems.map((data, i) => (
 							<li key={i}>
@@ -84,7 +86,7 @@ function DashboardSideBar({ onSidebarToggle }) {
 						))}
 					</ul>
 				</div>
-				<div className="dashboard mt-4">
+				<div className={`dashboard  ${theme === "dark" ? "Dark" : ""}  mt-4`}>
 					<p className="hamburger_header">Dashboards</p>
 
 					<Link to="/Dashboard/Default" className="dashboard-link d-flex align-items-center">

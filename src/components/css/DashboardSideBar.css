@@ -11,6 +11,36 @@
 	padding: 10px;
 }
 
+body .Dark {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 1s ease, color 0.3s ease;
+}
+.Dark a {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.menuitems.Dark ul li a {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.menuitems.Dark ul li::marker {
+	color: #fff; /* white bullet in dark mode */
+}
+
+.menuitems.Dark ul {
+	list-style: disc; /* ensure bullets are visible */
+	padding-left: 1.5rem;
+}
+
+.fav p .Dark.active {
+	border-radius: 8px;
+	color: rgba(255, 255, 255, 0.6);
+	transition: transform 0.3s ease-in-out;
+}
+
 .hamburger_header {
 	color: rgba(28, 28, 102, 0.4);
 	font-size: 20px;
@@ -18,10 +48,30 @@
 	width: 100%;
 	padding: 10px;
 }
-.fav p:hover {
+.dashboard.Dark p {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dashboard.Dark a {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dashboard.Dark .nav-item {
+	background-color: black !important;
+	color: white !important;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard.Dark .fav p:hover {
 	border-radius: 8px;
 	background: rgba(28, 28, 28, 0.05);
 	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.Dark .fav p.active {
+	color: #fff; /* turn white in dark mode */
 }
 
 .fav p.active {
@@ -37,6 +87,11 @@
 .offcanvas {
 	font-family: "Inter", sans-serif;
 	padding: 20px;
+}
+
+.Offcanvas .Dark {
+	background-color: black !important;
+	color: white !important;
 }
 .sidebarIcon:hover {
 	transition: none !important;
@@ -63,6 +118,11 @@
 	border: none !important;
 	width: 100%;
 	min-width: 200px;
+}
+
+.dropdown-item .Dark {
+	background-color: black !important;
+	color: white !important;
 }
 
 .dropdown-item {

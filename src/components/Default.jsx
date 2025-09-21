@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./css/Default.css";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import StackedBarChart from "./StackedBarChart";
@@ -7,14 +7,17 @@ import WroldMap from "./images/WorldMap.png";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import AccessibleTable from "./AccessibleTable";
 import PieChartComp from "./PieChartComp.jsx";
+import { SidemenuContext } from "./SidemenuProvider.jsx";
 
 function Default() {
+	const { theme } = useContext(SidemenuContext);
+
 	return (
-		<div className="default-component">
+		<div className={`default-component `}>
 			<div className="container">
 				<div className=" stack ">
-					<div className=" rounded">
-						<div className="card">
+					<div className={`chart ${theme === "dark" ? "Dark" : ""} rounded`}>
+						<div className={`card ${theme === "dark" ? "Dark" : ""}`}>
 							<div className="card-body">
 								<h6 className="card-title">eCommerce</h6>
 								<div className="row mt-4">
@@ -89,15 +92,24 @@ function Default() {
 							</div>
 						</div>
 					</div>
-					<div className=" rounded" style={{ background: "#F7F9FB" }}>
+					<div
+						className={`chart ${theme === "dark" ? "Dark" : ""} rounded`}
+						style={{ background: "#F7F9FB" }}
+					>
 						<StackedBarChart />
 					</div>
 				</div>
-				<div className=" pie">
-					<div className=" rounded" style={{ background: "#F7F9FB" }}>
+				<div className={`pie ${theme === "dark" ? "Dark" : ""}`}>
+					<div
+						className={`chart ${theme === "dark" ? "Dark" : ""} rounded`}
+						style={{ background: "#F7F9FB" }}
+					>
 						<RevenueCard />
 					</div>
-					<div className=" p-3 rounded" style={{ background: "#F7F9FB" }}>
+					<div
+						className={`chart ${theme === "dark" ? "Dark" : ""} rounded p-3`}
+						style={{ background: "#F7F9FB" }}
+					>
 						<h6 className="text-center">Revenue by Location</h6>
 						<img src={WroldMap} className="w-75 mt-3 mx-auto" alt="World Map" />
 						<div>
@@ -170,11 +182,14 @@ function Default() {
 						</div>
 					</div>
 				</div>
-				<div className="pie ">
-					<div className=" rounded">
+				<div className={`pie ${theme === "dark" ? "Dark" : ""}`}>
+					<div className={`chart ${theme === "dark" ? "Dark" : ""} rounded`}>
 						<AccessibleTable />
 					</div>
-					<div className="p-3 rounded" style={{ background: "#F7F9FB" }}>
+					<div
+						className={`chart ${theme === "dark" ? "Dark" : ""} rounded p-3`}
+						style={{ background: "#F7F9FB" }}
+					>
 						<PieChartComp />
 						<ul>
 							<li className="direct">Direct</li>

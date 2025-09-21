@@ -4,12 +4,28 @@
 	padding-bottom: 10px;
 	border: none !important;
 }
+.chart {
+	background: #f7f9fb !important;
+}
+.chart .Dart {
+	background-color: #ffffff0d !important;
+	transition: transform 0.3s ease-in-out;
+}
+.card.Dart {
+	background-color: #ffffff0d !important;
+	transition: transform 0.3s ease-in-out;
+}
 
 .pie {
 	display: grid;
 	column-gap: 50px !important;
 	grid-template-columns: 70% 30% !important;
 	margin-top: 20px;
+}
+.pie .Dark {
+	background-color: #ffffff0d !important;
+	color: white !important;
+	transition: transform 0.3s ease-in-out;
 }
 
 .stack {

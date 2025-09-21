@@ -11,6 +11,16 @@
 	margin-left: 0;
 }
 
+Navbar.Dark .nav-link {
+	background-color: black;
+	color: white !important;
+}
+
+.Dark Nanbar .nav-link {
+	background-color: black;
+	color: white;
+}
+
 @media (max-width: 1199.98px) {
 	.main-content {
 		margin-left: 0;
