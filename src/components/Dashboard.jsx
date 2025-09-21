@@ -58,7 +58,7 @@ function Dashboard() {
 							</Nav.Link>
 						</div>
 
-						<div className="d-flex align-items-center ">
+						<div className="d-md-flex d-none align-items-center ">
 							<div style={{ position: "relative", width: "300px" }}>
 								<Form.Control
 									ref={searchRef}
@@ -83,7 +83,7 @@ function Dashboard() {
 								</span>
 							</div>
 							<Nav.Link className="ms-4">
-								<i class="bi bi-brightness-high" onClick={handleTheme}></i>
+								<i className="bi bi-brightness-high" onClick={handleTheme}></i>
 							</Nav.Link>
 							<Nav.Link className="ms-2">
 								<HistoryIcon />

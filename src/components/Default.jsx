@@ -8,6 +8,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import AccessibleTable from "./AccessibleTable";
 import PieChartComp from "./PieChartComp.jsx";
 import { SidemenuContext } from "./SidemenuProvider.jsx";
+import { Link } from "react-router-dom";
 
 function Default() {
 	const { theme } = useContext(SidemenuContext);
@@ -47,7 +48,9 @@ function Default() {
 												style={{ color: "black" }}
 											>
 												<div>
-													<h6 className="card-title">Orders</h6>
+													<Link to={"/Dashboard/Order"} className="card-title">
+														Orders
+													</Link>
 													<h3 className="card-text">1,219</h3>
 												</div>
 												<p className="text-center align-items-end d-flex">
@@ -189,6 +192,8 @@ function Default() {
 					<div
 						className={`chart ${theme === "dark" ? "Dark" : ""} rounded p-3`}
 						style={{ background: "#F7F9FB" }}
+						width="100%"
+						height="70%"
 					>
 						<PieChartComp />
 						<ul>

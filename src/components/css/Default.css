@@ -50,3 +50,19 @@
 .pie ul .email::marker {
 	color: #baedbd;
 }
+
+@media only screen and (max-width: 1024px) {
+	.pie {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		grid-template-columns: 1fr !important; /* single column */
+	}
+	.chart {
+		height: 100% !important;
+		width: 100%;
+	}
+	.stack {
+		grid-template-columns: 1fr !important; /* single column */
+	}
+}

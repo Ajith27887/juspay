@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import SidemenuProvider from "./components/SidemenuProvider";
+import Order from "./components/Orders.jsx";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 					<Route path="/Dashboard" element={<Dashboard />}>
 						<Route index element={<Default />} />
 						<Route path="Default" element={<Default />} />
+						<Route path="Order" element={<Order />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>

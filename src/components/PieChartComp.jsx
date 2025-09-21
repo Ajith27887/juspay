@@ -71,7 +71,7 @@ export default function PieChartComp() {
 	return (
 		<>
 			<h6 className="text-center">Total Sales</h6>
-			<ResponsiveContainer width="100%" height="70%">
+			<ResponsiveContainer>
 				<PieChart width={400} height={400}>
 					<Pie
 						activeShape={renderActiveShape}

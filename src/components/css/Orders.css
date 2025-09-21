@@ -1,0 +1,10 @@
+.options {
+	background-color: #f7f9fb;
+	padding: 10px;
+	border-radius: 10px;
+	width: 100%;
+}
+
+table tr td {
+	text-align: left !important;
+}
