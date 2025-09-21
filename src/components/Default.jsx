@@ -2,13 +2,18 @@ import React from "react";
 import "./css/Default.css";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import StackedBarChart from "./StackedBarChart";
+import RevenueCard from "./LineChart";
+import WroldMap from "./images/WorldMap.png";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import AccessibleTable from "./AccessibleTable";
+import PieChartComp from "./PieChartComp.jsx";
 
 function Default() {
 	return (
 		<div className="default-component">
 			<div className="container">
-				<div className="row">
-					<div className="col-6">
+				<div className=" stack ">
+					<div className=" rounded">
 						<div className="card">
 							<div className="card-body">
 								<h6 className="card-title">eCommerce</h6>
@@ -84,8 +89,99 @@ function Default() {
 							</div>
 						</div>
 					</div>
-					<div className="col-6">
+					<div className=" rounded" style={{ background: "#F7F9FB" }}>
 						<StackedBarChart />
+					</div>
+				</div>
+				<div className=" pie">
+					<div className=" rounded" style={{ background: "#F7F9FB" }}>
+						<RevenueCard />
+					</div>
+					<div className=" p-3 rounded" style={{ background: "#F7F9FB" }}>
+						<h6 className="text-center">Revenue by Location</h6>
+						<img src={WroldMap} className="w-75 mt-3 mx-auto" alt="World Map" />
+						<div>
+							<div className="d-flex flex-row mt-3 justify-content-between">
+								<p>New York</p>
+								<p>72k</p>
+							</div>
+							<ProgressBar
+								now={80}
+								className="w-100 mt-1"
+								style={{ height: "6px", backgroundColor: "#F7F9FB" }}
+							>
+								<div
+									className="progress-bar"
+									role="progressbar"
+									style={{ width: "80%", backgroundColor: "#A8C5DA" }}
+								/>
+							</ProgressBar>
+						</div>
+						<div>
+							<div className="d-flex flex-row mt-3 justify-content-between">
+								<p>San Francisco</p>
+								<p>39k</p>
+							</div>
+							<ProgressBar
+								now={80}
+								className="w-100 mt-1"
+								style={{ height: "6px", backgroundColor: "#F7F9FB" }}
+							>
+								<div
+									className="progress-bar"
+									role="progressbar"
+									style={{ width: "39%", backgroundColor: "#A8C5DA" }}
+								/>
+							</ProgressBar>
+						</div>
+						<div>
+							<div className="d-flex flex-row mt-3 justify-content-between">
+								<p>Sydney</p>
+								<p>25k</p>
+							</div>
+							<ProgressBar
+								now={80}
+								className="w-100 mt-1"
+								style={{ height: "6px", backgroundColor: "#F7F9FB" }}
+							>
+								<div
+									className="progress-bar"
+									role="progressbar"
+									style={{ width: "25%", backgroundColor: "#A8C5DA" }}
+								/>
+							</ProgressBar>
+						</div>
+						<div>
+							<div className="d-flex flex-row mt-3 justify-content-between">
+								<p>Sydney</p>
+								<p>61k</p>
+							</div>
+							<ProgressBar
+								now={80}
+								className="w-100 mt-1"
+								style={{ height: "6px", backgroundColor: "#F7F9FB" }}
+							>
+								<div
+									className="progress-bar"
+									role="progressbar"
+									style={{ width: "61%", backgroundColor: "#A8C5DA" }}
+								/>
+							</ProgressBar>
+						</div>
+					</div>
+				</div>
+				<div className="pie ">
+					<div className=" rounded">
+						<AccessibleTable />
+					</div>
+					<div className="p-3 rounded" style={{ background: "#F7F9FB" }}>
+						<PieChartComp />
+						<ul>
+							<li className="direct">Direct</li>
+							<li className="Affilliate">Affilliate</li>
+							<li className="Sponsored">Sponsored</li>
+							<li className="email"> E-mail</li>
+						</ul>
 					</div>
 				</div>
 			</div>

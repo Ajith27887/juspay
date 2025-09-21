@@ -3,7 +3,8 @@
 	padding: 20px;
 	/* margin-left: var(--sidebar-width); */
 	transition: margin-left 0.3s ease-in-out;
-	min-height: calc(100vh - 56px); /* Subtract navbar height */
+	min-height: calc(100vh - 56px);
+	/* Subtract navbar height */
 }
 
 .dashboard-container.sidebar-open .main-content {

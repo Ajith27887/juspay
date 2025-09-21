@@ -4,3 +4,33 @@
 	padding-bottom: 10px;
 	border: none !important;
 }
+
+.pie {
+	display: grid;
+	column-gap: 50px !important;
+	grid-template-columns: 70% 30% !important;
+	margin-top: 20px;
+}
+
+.stack {
+	display: grid;
+	column-gap: 50px !important;
+	grid-template-columns: 50% 50% !important;
+	margin-top: 20px;
+}
+
+.pie ul .direct::marker {
+	color: #000000;
+}
+
+.pie ul .Affilliate::marker {
+	color: #95a4fc;
+}
+
+.pie ul .Sponsored::marker {
+	color: #b1e3ff;
+}
+
+.pie ul .email::marker {
+	color: #baedbd;
+}
