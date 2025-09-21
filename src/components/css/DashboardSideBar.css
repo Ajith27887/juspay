@@ -1,0 +1,253 @@
+/* Define consistent sidebar width */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
+
+:root {
+	--sidebar-width: 300px;
+}
+
+.fav p {
+	margin-right: 15px;
+	padding: 10px;
+}
+
+.hamburger_header {
+	color: rgba(28, 28, 102, 0.4);
+	font-size: 20px;
+	height: auto;
+	width: 100%;
+	padding: 10px;
+}
+.fav p:hover {
+	border-radius: 8px;
+	background: rgba(28, 28, 28, 0.05);
+	cursor: pointer;
+}
+
+.fav p.active {
+	border-radius: 8px;
+	color: rgba(28, 28, 102, 0.6);
+	cursor: pointer;
+}
+
+.dashboard-container {
+	transition: margin-left 0.3s ease-in-out;
+	margin-left: 0;
+}
+.offcanvas {
+	font-family: "Inter", sans-serif;
+	padding: 20px;
+}
+.sidebarIcon:hover {
+	transition: none !important;
+	box-shadow: none !important;
+}
+.menuitems ul li {
+	list-style: none;
+	color: black;
+}
+.menuitems ul li a {
+	color: black;
+	list-style: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.dropdown-menu-items {
+	margin-top: 10px;
+}
+
+.dropdown-menu {
+	text-align: center;
+	padding: 8px 0;
+	border: none !important;
+	width: 100%;
+	min-width: 200px;
+}
+
+.dropdown-item {
+	padding: 12px 20px !important;
+	margin: 4px 8px;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+	position: relative;
+}
+
+.dropdown-item:hover {
+	background: rgba(28, 28, 28, 0.05) !important;
+	color: rgba(28, 28, 102, 0.8) !important;
+	border-radius: 15px;
+}
+
+.dropdown-item:hover::before {
+	content: "";
+	position: absolute;
+	left: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 8px;
+	height: 8px;
+	background-color: #1c1c1c;
+	border-radius: 50%;
+}
+
+.dropdown-item:last-child {
+	border-bottom: none;
+}
+
+.dropdown-link {
+	/* color: rgba(28, 28, 102, 0.6); */
+	color: black !important;
+	text-decoration: none;
+	font-size: 14px;
+	display: block;
+	padding: 5px 0;
+	transition: color 0.2s ease;
+}
+
+.dropdown-link:hover {
+	color: rgba(28, 28, 102, 0.8);
+	text-decoration: none;
+}
+
+/* Add right arrow for specific dropdown items */
+.dropdown-item:nth-child(2) .dropdown-link::before,
+.dropdown-item:nth-child(3) .dropdown-link::before,
+.dropdown-item:nth-child(4) .dropdown-link::before {
+	/* content: "▶"; */
+	content: ">";
+	color: rgba(28, 28, 102, 0.4);
+	margin-right: 8px;
+	font-size: 10px;
+}
+
+.menuitems ul li::before {
+	content: "\2022"; /* Unicode for a solid round bullet */
+	color: rgba(28, 28, 102, 0.4); /* Set your desired bullet color */
+	display: inline-block; /* Allows for setting width and margin */
+	width: 1.5em; /* Increased spacing for larger bullets */
+	margin-left: 2px; /* Adjust spacing as needed */
+	font-size: 1.5em; /* Increased bullet size */
+	font-weight: bold; /* Make bullets more prominent */
+}
+.side_header {
+	display: flex;
+	padding: 20px;
+	align-items: end;
+	font-family: "Inter", sans-serif;
+	gap: 10px;
+	font-weight: 400;
+	font-size: 20px;
+}
+.dashboard-container.sidebar-open {
+	margin-left: var(--sidebar-width);
+}
+
+@media (max-width: 1199.98px) {
+	.offcanvas {
+		padding: 20px;
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: var(--sidebar-width) !important;
+		transform: translateX(-100%);
+		transition: transform 0.3s ease-in-out;
+		z-index: 1050;
+	}
+
+	.offcanvas.show {
+		transform: translateX(0);
+	}
+}
+
+@media (min-width: 1200px) {
+	.offcanvas {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: var(--sidebar-width) !important;
+		transform: translateX(-100%);
+		transition: transform 0.3s ease-in-out;
+		z-index: 0;
+	}
+
+	.offcanvas.show {
+		transform: translateX(0);
+	}
+}
+
+/* Ensure smooth transitions for the navbar */
+/* .navbar {
+	transition: all 0.3s ease-in-out;
+} */
+
+/* Optional: Add a subtle shadow when sidebar is open */
+.dashboard-container.sidebar-open .navbar {
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom dropdown styling */
+.custom-dropdown .dropdown-toggle {
+	background: none !important;
+	border: none !important;
+	color: black !important;
+	font-size: 16px;
+	padding: 8px 0;
+	text-align: left;
+	width: 100%;
+}
+
+.custom-dropdown .dropdown-toggle:focus {
+	box-shadow: none !important;
+}
+
+.custom-dropdown .dropdown-toggle::after {
+	display: none !important; /* Hide the default down arrow */
+}
+
+.dropdown-arrow {
+	color: rgba(28, 28, 102, 0.4);
+	margin-right: 8px;
+	font-size: 12px;
+	transition: transform 0.2s ease;
+}
+
+/* Target only the dropdown arrow in the custom dropdown */
+.custom-dropdown .dropdown-arrow {
+	display: inline-block; /* Make sure it's a block element for transform */
+}
+
+.custom-dropdown .dropdown-arrow.arrow-down {
+	transform: rotate(90deg) !important;
+}
+
+/* More specific selector for the NavDropdown arrow */
+.custom-dropdown span.dropdown-arrow.arrow-down {
+	transform: rotate(90deg) !important;
+}
+
+/* Dashboard link styling */
+.dashboard-link {
+	display: block;
+	padding: 12px 20px;
+	margin: 8px 0;
+	color: black;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+	position: relative;
+}
+
+.dashboard-link:hover {
+	/* background-color: rgba(28, 28, 102, 0.1); */
+	background: rgba(28, 28, 28, 0.05);
+	color: rgba(28, 28, 102, 0.8);
+	text-decoration: none;
+	border-radius: 15px;
+}
+
+.dashboard-link i {
+	margin-right: 8px;
+}

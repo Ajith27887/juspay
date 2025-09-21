@@ -1,63 +1,17 @@
-/* Define consistent sidebar width */
-:root {
-	--sidebar-width: 300px;
+/* Main content area styling */
+.main-content {
+	padding: 20px;
+	/* margin-left: var(--sidebar-width); */
+	transition: margin-left 0.3s ease-in-out;
+	min-height: calc(100vh - 56px); /* Subtract navbar height */
 }
 
-.dashboard-container {
-	transition: margin-left 0.3s ease-in-out;
+.dashboard-container.sidebar-open .main-content {
 	margin-left: 0;
 }
 
-/* .dashboard-container.sidebar-open {
-	margin-left: var(--sidebar-width);
-} */
-
-/* For mobile responsiveness - sidebar will overlay on smaller screens */
 @media (max-width: 1199.98px) {
-	.dashboard-container.sidebar-open {
-		margin-left: 0; /* No margin on smaller screens as sidebar is overlay */
+	.main-content {
+		margin-left: 0;
 	}
-
-	.offcanvas {
-		position: fixed !important;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: var(--sidebar-width) !important;
-		transform: translateX(-100%);
-		transition: transform 0.3s ease-in-out;
-		z-index: 1050; /* Higher z-index for overlay on mobile */
-	}
-
-	.offcanvas.show {
-		transform: translateX(0);
-	}
-}
-
-/* For larger screens - sidebar pushes content */
-@media (min-width: 1200px) {
-	.offcanvas {
-		position: fixed !important;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: var(--sidebar-width) !important;
-		transform: translateX(-100%);
-		transition: transform 0.3s ease-in-out;
-		z-index: 0; /* Lower z-index for push behavior */
-	}
-
-	.offcanvas.show {
-		transform: translateX(0);
-	}
-}
-
-/* Ensure smooth transitions for the navbar */
-.navbar {
-	transition: all 0.3s ease-in-out;
-}
-
-/* Optional: Add a subtle shadow when sidebar is open */
-.dashboard-container.sidebar-open .navbar {
-	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
